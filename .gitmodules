@@ -3,4 +3,4 @@
 	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "bundle/cscope"]
 	path = bundle/cscope
-	url = git://github.com/vim-scripts/cscope.vim.git
+	url = https://github.com/vim-scripts/cscope.vim.git
