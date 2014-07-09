@@ -40,7 +40,7 @@ set history=100
 " store a bunch of undo history
 set undolevels=400
 " enable spell checking
-set spell
+"set spell
 " allow buffer switching without saving
 set hidden
 
