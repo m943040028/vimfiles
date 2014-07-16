@@ -162,6 +162,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-obsession'
 
+Plugin 'm943040028/cscope.vim'
+
 call vundle#end()
 
 syntax on
