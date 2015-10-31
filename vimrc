@@ -201,7 +201,7 @@ nnoremap <leader>g :Gstatus<CR>4j
 " Unite mappings
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
+call unite#set_profile('files', 'context.smartcase', 1)
 call unite#custom#source('line,outline','matchers','matcher_fuzzy')
 call unite#custom#source('file_rec', 'ignore_pattern', 'node_modules/')
 call unite#custom#source('file_rec', 'ignore_pattern', '.git/')
