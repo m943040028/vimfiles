@@ -3,7 +3,7 @@ set encoding=utf-8
 " Look
 set background=dark
 colorscheme jellybeans
-"set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h10
+set guifont=monospace\ 14
 
 " line numbers
 set number
