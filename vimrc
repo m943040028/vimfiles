@@ -3,6 +3,9 @@ set encoding=utf-8
 " Look
 set background=dark
 colorscheme jellybeans
+if has('gui_running')
+  set guifont=DejaVu\ Sans\ Mono\ 11
+endif
 
 " line numbers
 set number
@@ -132,6 +135,7 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 
 Plugin 'm943040028/cscope.vim'
+Plugin 'Konfekt/FastFold'
 
 call vundle#end()
 
