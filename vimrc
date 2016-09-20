@@ -3,7 +3,6 @@ set encoding=utf-8
 " Look
 set background=dark
 colorscheme jellybeans
-set guifont=monospace\ 14
 
 " line numbers
 set number
@@ -121,46 +120,16 @@ call vundle#begin()
 " Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" <3
-Plugin 'jaxbot/selective-undo.vim'
-Plugin 'jaxbot/brolink.vim'
-
 " Git/github integration
-Plugin 'jaxbot/github-issues.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'gregsexton/gitv'
-Plugin 'airblade/vim-gitgutter'
 
 " Tools
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/loremipsum'
 Plugin 'rking/ag.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-
-" Syntaxes
-Plugin 'tpope/vim-haml'
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'myhere/vim-nodejs-complete'
-Plugin 'moll/vim-node'
-Plugin 'wavded/vim-stylus'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
-
-" Misc tpope goodies
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-scriptease'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-obsession'
 
 Plugin 'm943040028/cscope.vim'
 
