@@ -4,7 +4,7 @@ set encoding=utf-8
 set background=dark
 colorscheme jellybeans
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ 11
+  set guifont=DejaVu\ Sans\ Mono\ 10
 endif
 
 " line numbers
