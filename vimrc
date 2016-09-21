@@ -145,6 +145,9 @@ let g:gitgutter_eager = 0
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 
+" TagBar
+nmap <F12> :TagbarToggle<CR>
+
 " AirLine
 let g:airline#extensions#tabline#enabled = 1
 
