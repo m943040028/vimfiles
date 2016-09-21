@@ -1,3 +1,36 @@
+" Vundle Plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" Theme
+Plugin 'nanotech/jellybeans.vim'
+
+" Git/github integration
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
+
+" Tools
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'm943040028/cscope.vim'
+Plugin 'Konfekt/FastFold'
+
+call vundle#end()
+filetype plugin indent on    " required
+
 set encoding=utf-8
 
 " Look
@@ -20,12 +53,6 @@ set backspace=2
 " I like my leader being ','. It's easier to reach
 let mapleader = ","
 
-" Disable chimes
-set visualbell
-set t_vb =
-set visualbell t_vb=
-au GuiEnter * set visualbell t_vb=
-
 " disable backup and swap files
 set nobackup
 set noswapfile
@@ -33,33 +60,14 @@ set noswapfile
 " use the OS clipboard
 set clipboard=unnamed
 
-" Improve Unix/Windows compatibility
-set viewoptions=folds,options,cursor,unix
 " allow the cursor to pass the last character
 set virtualedit=onemore
 " store more command history
 set history=100
 " store a bunch of undo history
 set undolevels=400
-" enable spell checking
-"set spell
 " allow buffer switching without saving
 set hidden
-
-" Status line
-set laststatus=2
-" Filename
-set statusline=%<%f\
-" Options
-set statusline+=%w%h%m%r
-" Git Hotness
-set statusline+=%{fugitive#statusline()}
-" Filetype
-set statusline+=\ [%{&ff}/%Y]
-" Directory
-set statusline+=\ [%{getcwd()}]
-" File info
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 " Show matching brackets/parenthesis
 set showmatch
@@ -76,12 +84,6 @@ set ignorecase
 " Case sensitive if we type an uppercase
 set smartcase
 
-" CTRL-S
-nnoremap <silent> <C-S> :<C-u>Update<CR>
-noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <C-O>:update<CR>
-
 " Window navigation
 map <C-J> <C-W>j
 map <C-K> <C-W>k
@@ -95,20 +97,12 @@ nnoremap <C-t> :tabnew<cr>
 " Use Esc to hide search highlights
 nnoremap <Esc> :nohl<CR>
 
-" Wrapped lines goes down/up to next row, rather than next line in file.
-nnoremap j gj
-nnoremap k gk
-
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
-
 " Indent options
 set autoindent
 set noexpandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-"set cinkeys=0{,0},:,0#,!^F
 
 " Folding
 set foldmethod=syntax
@@ -116,54 +110,8 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-" Plugins
-set rtp+=~/.vim/vundle/
-call vundle#begin()
-
-" Vundle
-Plugin 'gmarik/Vundle.vim'
-
-" Git/github integration
-Plugin 'tpope/vim-fugitive'
-
-" Tools
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/neomru.vim'
-
-Plugin 'm943040028/cscope.vim'
-Plugin 'Konfekt/FastFold'
-
-call vundle#end()
-
-syntax on
-filetype on
-filetype plugin on
-filetype plugin indent on
-
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
-
-" Nodejs dictionary
-au FileType javascript set dictionary+=$HOME/vimfiles/bundle/vim-node/dict/node.dict
-
-" Netrw remote transfers
-let g:netrw_altv          = 1
-let g:netrw_fastbrowse    = 2
-let g:netrw_keepdir       = 0
-let g:netrw_liststyle     = 2
-let g:netrw_retmap        = 1
-let g:netrw_silent        = 1
-let g:netrw_special_syntax= 1
-
-" gcc compile C files
-autocmd filetype c nnoremap <Leader>c :w <CR>:!gcc % -o %:r && ./%:r<CR>
-
-" java compile files
-autocmd filetype java nnoremap <Leader>c :w <CR>:!javac % && java %:r<CR>
 
 " Make Markdown actually detected as Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -189,12 +137,6 @@ nnoremap <C-p> :Unite -start-insert file_rec<cr>
 " Ag, the silver searcher
 map <C-\> :execute "Ag " . expand("<cword>") <CR>
 
-" Brolink
-let g:bl_autostart = 1
-au BufWritePost */static/templates/*.html :BLReloadTemplate
-
-hi CursorLineNr   term=bold ctermfg=Gray gui=bold guifg=#c5c5c5
-
 " GitGutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
@@ -203,34 +145,8 @@ let g:gitgutter_eager = 0
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 
-" Tell eclim to play nice with Neocomplete
-let g:EclimCompletionMethod = 'omnifunc'
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-	return neocomplete#smart_close_popup() . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-" No scratch
-set completeopt-=preview
-
-" Full screen
-map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-map <F12> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230)<CR>
-
-" Use powerline fonts on airline
-let g:airline_powerline_fonts = 1
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-map <leader>p :Gist -c<CR>
+" AirLine
+let g:airline#extensions#tabline#enabled = 1
 
 " Local stuff (access_token, www folder, etc)
 so ~/.local.vim
