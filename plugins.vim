@@ -23,7 +23,9 @@ Plugin 'rking/ag.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'jeaye/color_coded'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'brookhong/cscope.vim'
 
 call vundle#end()
