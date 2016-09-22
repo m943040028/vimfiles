@@ -115,9 +115,6 @@ let g:gitgutter_eager = 0
 " TagBar
 nmap <F12> :TagbarToggle<CR>
 
-" AirLine
-let g:airline#extensions#tabline#enabled = 1
-
 " Cscope
 " s: Find this C symbol
 nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
@@ -138,4 +135,5 @@ nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python'
 
