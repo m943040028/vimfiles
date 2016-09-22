@@ -3,6 +3,5 @@
 echo "symlinking dotfiles to ~/"
 
 ln -sf ~/.vim/vimrc ~/.vimrc
-ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
-ln -sf ~/.vim/.local.vim ~/.local.vim
+ln -sf ~/.vim/tmux.conf ~/.tmux.conf
 

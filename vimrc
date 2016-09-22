@@ -1,36 +1,13 @@
-" Vundle Plugins
-set nocompatible              " be iMproved, required
-filetype off                  " required
+so ~/.vim/plugins.vim
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has ('autocmd') " Remain compatible with earlier versions
+  augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
 
-" Vundle
-Plugin 'VundleVim/Vundle.vim'
-
-" Theme
-Plugin 'nanotech/jellybeans.vim'
-
-" Git/github integration
-Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
-Plugin 'airblade/vim-gitgutter'
-
-" Tools
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/neomru.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'm943040028/cscope.vim'
-Plugin 'Konfekt/FastFold'
-
-call vundle#end()
-filetype plugin indent on    " required
-
+filetype on
 set encoding=utf-8
 
 " Look
@@ -110,12 +87,6 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-
-" Make Markdown actually detected as Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " Fugitive/Git Shortcuts
 nnoremap <leader>g :Gstatus<CR>4j
 
@@ -141,16 +112,30 @@ map <C-\> :execute "Ag " . expand("<cword>") <CR>
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" Neocomplete
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-
 " TagBar
 nmap <F12> :TagbarToggle<CR>
 
 " AirLine
 let g:airline#extensions#tabline#enabled = 1
 
-" Local stuff (access_token, www folder, etc)
-so ~/.local.vim
+" Cscope
+" s: Find this C symbol
+nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 

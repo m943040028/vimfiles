@@ -1,12 +1,16 @@
 ### Instructions
 
 ```
-git clone git@github.com:m943040028/vimfiles.git ~/.vim/
-git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ git clone https://github.com/m943040028/vimfiles.git ~/.vim/
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-./link
-
-:PluginInstall
+$ cd ~/.vim
+$ ./link
 ```
 
-Tada.
+Please follow instructions in [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for post installation
+
+Enter vim, then execute
+```
+:PluginInstall
+```
