@@ -13,8 +13,8 @@ Please follow instructions in [YouCompleteMe](https://github.com/Valloric/YouCom
 To generate YouCompleteMe and [color_colded](https://github.com/jeaye/color_coded) config file for magenta kernel
 ```
 $ cd <magenta kernel path>
-$ ~/.vim/bundle/YCM-Generator/config_gen.py -eM "-j32 -i CC=clang CXX=clang++ magenta-qemu-arm64" .
-$ ~/.vim/bundle/YCM-Generator/config_gen.py -F cc -eM "-j32 -i CC=clang CXX=clang++ magenta-qemu-arm64" .
+$ ~/.vim/bundle/YCM-Generator/config_gen.py -x c++ -eM "-j32 -i CC=clang++ magenta-qemu-arm64" .
+$ ~/.vim/bundle/YCM-Generator/config_gen.py -x c++ -F cc -eM "-j32 -i CC=clang++ magenta-qemu-arm64" .
 ```
 
 Enter vim, then execute
