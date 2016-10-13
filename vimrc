@@ -10,9 +10,9 @@ endif " has autocmd
 filetype on
 set encoding=utf-8
 set mouse=
+set term=ansi
 
 " Look
-set background=dark
 colorscheme jellybeans
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ 10
@@ -137,5 +137,5 @@ nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_python_binary_path = 'python'
+let g:ycm_confirm_extra_conf = 0
 
