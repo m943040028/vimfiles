@@ -68,8 +68,8 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
 
-nnoremap <C-right> :tabn<cr>
-nnoremap <C-left> :tabp<cr>
+nnoremap <M-right> :tabn<cr>
+nnoremap <M-left> :tabp<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " Use Esc to hide search highlights
@@ -135,7 +135,6 @@ nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
