@@ -10,12 +10,20 @@ endif " has autocmd
 filetype on
 set encoding=utf-8
 set mouse=
-set term=ansi
+
+if !has('gui_running')
+  set term=ansi
+endif
 
 " Look
 colorscheme jellybeans
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ 10
+
+  if has('gui_macvim')
+    set guifont=Monaco:h14
+  else
+    set guifont=DejaVu\ Sans\ Mono\ 10
+  endif
 endif
 
 " line numbers
