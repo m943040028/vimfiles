@@ -20,7 +20,7 @@ colorscheme jellybeans
 if has('gui_running')
 
   if has('gui_macvim')
-    set guifont=Monaco:h14
+    set guifont=Monaco:h16
   else
     set guifont=DejaVu\ Sans\ Mono\ 12
   endif
@@ -44,7 +44,7 @@ set nobackup
 set noswapfile
 
 " use the OS clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " allow the cursor to pass the last character
 set virtualedit=onemore
@@ -85,7 +85,7 @@ nnoremap <Esc> :nohl<CR>
 
 " Indent options
 set autoindent
-set noexpandtab
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
