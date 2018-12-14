@@ -26,6 +26,9 @@ if has('gui_running')
   endif
 endif
 
+" enable 256 color
+let &t_Co=256
+
 " line numbers
 set number
 " relative line numbers
@@ -76,12 +79,12 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
 
-nnoremap <M-right> :tabn<cr>
-nnoremap <M-left> :tabp<cr>
+nnoremap <C-l> :tabn<cr>
+nnoremap <C-h> :tabp<cr>
 nnoremap <C-t> :tabnew<cr>
 
-" Use Esc to hide search highlights
-nnoremap <Esc> :nohl<CR>
+" Redraw screen
+nnoremap <C-r> :redraw!<cr>:nohl<cr>
 
 " Indent options
 set autoindent
@@ -146,3 +149,6 @@ nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 1
+
+" airline
+let g:airline#extensions#tabline#enabled = 1

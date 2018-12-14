@@ -23,9 +23,9 @@ Plugin 'rking/ag.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'jeaye/color_coded'
+"Plugin 'jeaye/color_coded'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'brookhong/cscope.vim'
 
 Plugin 'google/vim-maktaba'
