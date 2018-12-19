@@ -84,7 +84,7 @@ nnoremap <C-h> :tabp<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " Redraw screen
-nnoremap <C-r> :redraw!<cr>:nohl<cr>
+nnoremap <C-e> :redraw!<cr>:nohl<cr>
 
 " Indent options
 set autoindent
@@ -149,6 +149,3 @@ nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 1
-
-" airline
-let g:airline#extensions#tabline#enabled = 1
